@@ -1,0 +1,184 @@
+#map {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.map-overlay {
+  /* visibility: hidden; */
+  background-color: #fff;
+  border-radius: 3px;
+  bottom: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font: 12px/20px "sans-serif", Arial, Helvetica;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+  /* width: 150px; */
+}
+
+.legend_water_depth h4 {
+  margin: 0 0 10px;
+}
+
+.legend_water_depth div span {
+  /* border-radius: 50%; */
+  display: inline-block;
+  min-height: 10px;
+  margin-right: 5px;
+  width: 10px;
+  /* margin-bottom: .0px */
+}
+
+.legend_flooded_roads h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  /* margin: 0 0 10px; */
+}
+
+.legend_flooded_roads div span {
+  display: inline-block;
+  min-height: 3px;
+  margin-right: 5px;
+  width: 20px;
+}
+
+/* Format for fire stations legend*/
+/* basic positioning */
+.legend {
+  list-style: none;
+  padding-left: 5px;
+  padding-bottom: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.legend li {
+  float: left;
+  margin-right: -2px;
+  padding-left: 0px;
+}
+.legend span {
+  border: 1px solid #ccc;
+  float: right;
+  width: 15px;
+  min-height: 12px;
+  margin: 2px;
+  padding-left: 0px;
+}
+/* your colors */
+.legend .fire_1 {
+  background-color: #ffffff;
+}
+.legend .fire_2 {
+  background-color: #f2f0f7;
+}
+.legend .fire_3 {
+  background-color: #dadaeb;
+}
+.legend .fire_4 {
+  background-color: #bcbddc;
+}
+.legend .fire_5 {
+  background-color: #9e9ac8;
+}
+.legend .fire_6 {
+  background-color: #807dba;
+}
+.legend .fire_7 {
+  background-color: #6a51a3;
+}
+.legend .fire_8 {
+  background-color: #4a1486;
+}
+
+/* .legend ul{
+    padding-left: 10px;
+} */
+
+.legend_mobility h4 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.legend .hospital_1 {
+  background-color: #ffffff00;
+}
+.legend .hospital_2 {
+  background-color: #fee5d9;
+}
+.legend .hospital_3 {
+  background-color: #fcbba1;
+}
+.legend .hospital_4 {
+  background-color: #fc9272;
+}
+.legend .hospital_5 {
+  background-color: #fb6a4a;
+}
+.legend .hospital_6 {
+  background-color: #ef3b2c;
+}
+.legend .hospital_7 {
+  background-color: #cb181d;
+}
+.legend .hospital_8 {
+  background-color: #99000d;
+}
+
+.legend .dialysis_center_1 {
+  background-color: #ffffff;
+}
+.legend .dialysis_center_2 {
+  background-color: #eff3ff;
+}
+.legend .dialysis_center_3 {
+  background-color: #c6dbef;
+}
+.legend .dialysis_center_4 {
+  background-color: #9ecae1;
+}
+.legend .dialysis_center_5 {
+  background-color: #6baed6;
+}
+.legend .dialysis_center_6 {
+  background-color: #4292c6;
+}
+.legend .dialysis_center_7 {
+  background-color: #2171b5;
+}
+.legend .dialysis_center_8 {
+  background-color: #084594;
+}
+
+.legend_mobility {
+  display: none;
+}
+
+.legend_mobility.layer_active {
+  display: block;
+  background-color: white;
+}
+
+.legend_water_depth {
+  display: block;
+}
+
+.legend_water_depth.layer_active {
+  display: none;
+  background-color: white;
+}
+
+.study_area_boundary span {
+  border: 2px solid rgb(0, 0, 0);
+  float: left;
+  width: 15px;
+  min-height: 12px;
+  padding-left: 0px;
+  margin-right: 5px;
+}
+
+/* .map-overlay {
+    min-height: 0px;
+} */

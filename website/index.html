@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <script type="text/javascript" src="js/script.js"></script> -->
+
+<!-- Head -->
+<!-- Metadata, JavaScrtip, and CSS -->
+
+<head>
+
+    <!-- Keywords and description -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Houston, flooding, flooded roads, roads">
+    <meta name="description"
+        content="Near real-time flooding and its impact on roadway mobility, Brays Bayou, Houston, Tx">
+
+    <!-- Title of the website -->
+    <title>OpenSafe Mobility</title>
+
+    <!-- Stylesheets -->
+
+    <!-- Stylesheet google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Stylesheet from main.css file -->
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/map.css">
+    <!-- <link rel="stylesheet" href="./pages/tailwind_style.css"> -->
+
+    <!-- Stylesheet from Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        type="text/css" />
+
+
+    <!-- Setting user scalable to no. This will prevent scrolling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Scripts -->
+
+    <!-- Scripts from Mapbox -->
+    <!-- <script src="scripts\mapbox.js"></script> -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+
+</head>
+
+
+<!-- Body; visual aspect of the website -->
+
+<body>
+    <!-- Creating a division; a page container -->
+    <!-- The page container consists of two parts, the navigation bar (nav) and the main (main) contend -->
+    <div class="page-container">
+
+        <!-- Navigation bar -->
+        <nav class="nav" id="navigation_side_panel">
+            <!-- Side panel consists of a navigation border between the side panel and the main panel and icons -->
+
+            <!-- Create an empty navigation border -->
+            <div class="nav__border"></div>
+
+            <!-- The Navigation Logo -->
+            <a href="#" class="nav__link logo" id="logo">
+                <div class="nav__icon-container nav_logo">
+                    <!-- Material Icon label -->
+                    <i class="material-icons">double_arrow</i>
+                </div>
+                <span class="nav__label">OpenSafe Mobility</span>
+            </a>
+
+
+            <!-- Flood depth Icon -->
+            <!-- Put your actual link in the href -->
+            <a href="#" class="nav__link flood_depth layer_active" data-tooltip="Flood Depths" id="flood_depth_button">
+                <div class="nav__icon-container">
+                    <!-- Material Icon label -->
+                    <i class="material-icons">water</i>
+                </div>
+                <span class="nav__label">Flood Depths</span>
+            </a>
+
+            <!-- Flooded road Icon -->
+            <a href="#" class="nav__link road_condition" data-tooltip="Flooded Roads" id="road_condition_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">commute</i>
+                </div>
+                <span class="nav__label">Flooded Roads</span>
+            </a>
+
+            <!-- Access to Fire stations Icon -->
+            <a href="#" class="nav__link access_to_fire" data-tooltip="Access to Fire Stations"
+                id="access_to_fire_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">local_fire_department</i>
+                </div>
+                <span class="nav__label">Access to Fire Stations</span>
+            </a>
+
+            <!-- Access to Hospitals Icon -->
+            <a href="#" class="nav__link access_to_hospitals" data-tooltip="Access to Hospitals"
+                id="access_to_hospitals_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">local_hospital</i>
+                </div>
+                <span class="nav__label">Access to Hospitals</span>
+            </a>
+
+            <!-- Access to Dialysis Centers Icon -->
+            <a href="#" class="nav__link access_to_dialysis" data-tooltip="Access to Dialysis Centers"
+                id="access_to_dialysis_centers_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">bloodtype</i>
+                </div>
+                <span class="nav__label">Access to Dialysis Centers</span>
+            </a>
+
+            <!-- Access to Pharmacies -->
+            <!-- <a href="#" class="nav__link access_to_pharmacy" data-tooltip="Access to Pharmacy"
+                id="access_to_pharmacy_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">local_pharmacy</i>
+                </div>
+                <span class="nav__label">Access to Pharmacy</span>
+            </a> -->
+
+            <!-- Settings -->
+            <a href="pages\opensafe_mobility_validation_dashboard.html" class="nav__link insights" data-tooltip="Insights and Validation" id="insights_button">
+                <div class="nav__icon-container">
+                    <i class="material-icons">insights</i>
+                </div>
+                <span class="nav__label">Insights and Validation</span>
+            </a>
+
+        </nav>
+
+
+        <!-- The map -->
+        <main class="main">
+
+            <!-- main contains map with inturn contains attribution  -->
+            <div id="map">
+                <!-- Attribution to Padgett group, Bedient group, and Disclaimer -->
+                <div id="attribution" class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-ctrl-bottom-right"
+                    style="position: fixed; bottom: 0; right: 200px;">
+                    <a href="pages\opensafe_mobility_validation_dashboard.html">Model Performance Dashboard</a> &nbsp;|&nbsp;
+                    <a href="https://padgett.rice.edu/">Padgett Research Group</a> &nbsp;|&nbsp;
+                    <a href="https://www.sspeed.rice.edu/">SSPEED Center</a> &nbsp;
+                </div>
+                </div>
+            </div>
+
+
+            <!-- Legend  -->
+            <div class="map-overlay" id="legend">
+
+                <div class="study_area_boundary">
+                    <!-- <h4 class="legend_key">Key</h4> -->
+                    <!-- <hr> -->
+                    <div><span style="outline-color:white"></span> Study area</div>
+                    <!-- <div><span style="background-color: black"></span>Study area</div> -->
+                </div>
+
+                <div id="legend_water_depth" class="legend_water_depth">
+                    <h4>Water depth (ft)</h4>
+                    <div><span style="background-color: #DEEBF7"></span>1.0 - 1.5 ft</div>
+                    <div><span style="background-color: #9ECAE1"></span>1.5 - 2.0 ft</div>
+                    <div><span style="background-color: #4292C6"></span>2.0 - 4.0 ft</div>
+                    <div><span style="background-color: #084594"></span> > 4.0 ft</div>
+                </div>
+
+                <!-- <div id="legend_water_depth" class="legend_water_depth">
+                    <h4>Water depth (ft)</h4>
+                    <div><span style="background-color: #F7FBFF"></span>0.0 - 0.1 ft</div>
+                    <div><span style="background-color: #DEEBF7"></span>0.1 - 0.2 ft</div>
+                    <div><span style="background-color: #C6DBEF"></span>0.2 - 0.5 ft</div>
+                    <div><span style="background-color: #9ECAE1"></span>0.5 - 1.0 ft</div>
+                    <div><span style="background-color: #6BAED6"></span>1.0 - 1.5 ft</div>
+                    <div><span style="background-color: #4292C6"></span>1.5 - 2.0 ft</div>
+                    <div><span style="background-color: #2171b5"></span>2.0 - 4.0 ft</div>
+                    <div><span style="background-color: #084594"></span> > 4.0 ft</div>
+                </div> -->
+                <!-- <hr> -->
+                <div id="legend_flooded_roads" class="legend_flooded_roads legend_mobility">
+                    <h4>Flooded roads</h4>
+                    <div><span style="background-color:red"></span>Flooded road</div>
+                    <!-- <div><span style="border: 6px solid red"></span>Flooded roads</div> -->
+                </div>
+
+                <!-- <hr> -->
+                <div class="legend_fire_stations legend_mobility">
+                    <h4>Connectivity loss to fire stations</h4>
+                    <i>0.0 (No loss) <big>&#x2192;</big> (No access) 1.0</i>
+                    <ul class="legend color_map">
+                        <li><span class="fire_1"></span></li>
+                        <li><span class="fire_2"></span></li>
+                        <li><span class="fire_3"></span></li>
+                        <li><span class="fire_4"></span></li>
+                        <li><span class="fire_5"></span></li>
+                        <li><span class="fire_6"></span></li>
+                        <li><span class="fire_7"></span></li>
+                        <li><span class="fire_8"></span></li>
+                    </ul>
+                    <!-- <div><span style="border: 6px solid red"></span>Flooded roads</div> -->
+                </div>
+
+                <div class="legend_hospitals legend_mobility">
+                    <h4>Connectivity loss to hospitals</h4>
+                    <i>0.0 (No loss) <big>&#x2192;</big> (No access) 1.0</i>
+                    <ul class="legend">
+                        <li><span class="hospital_1"></span></li>
+                        <li><span class="hospital_2"></span></li>
+                        <li><span class="hospital_3"></span></li>
+                        <li><span class="hospital_4"></span></li>
+                        <li><span class="hospital_5"></span></li>
+                        <li><span class="hospital_6"></span></li>
+                        <li><span class="hospital_7"></span></li>
+                        <li><span class="hospital_8"></span></li>
+                    </ul>
+                    <!-- <div><span style="border: 6px solid red"></span>Flooded roads</div> -->
+                </div>
+
+
+                <div class="legend_dialysis_center legend_mobility">
+                    <h4>Connectivity loss to dialysis centers</h4>
+                    <i>0.0 (No loss) <big>&#x2192;</big> (No access) 1.0</i>
+                    <ul class="legend">
+                        <li><span class="dialysis_center_1"></span></li>
+                        <li><span class="dialysis_center_2"></span></li>
+                        <li><span class="dialysis_center_3"></span></li>
+                        <li><span class="dialysis_center_4"></span></li>
+                        <li><span class="dialysis_center_5"></span></li>
+                        <li><span class="dialysis_center_6"></span></li>
+                        <li><span class="dialysis_center_7"></span></li>
+                        <li><span class="dialysis_center_8"></span></li>
+                    </ul>
+                    <!-- <div><span style="border: 6px solid red"></span>Flooded roads</div> -->
+                </div>
+
+                
+                <div class="last_run_time" style="width: 150px; height: 20px;">
+                    <div>
+                        <!-- <object class="contact-num" data="data\last_run.txt" style="font-family: Comic Sans MS"></object> -->
+                        <span> <embed src="data\last_run.html" style="width: 150px; height: 25px";> </span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Java scripts -->
+
+    <!-- Call the disclaimer script -->
+    <!-- Calling it at the bottom of body tag to ensure loading of all contents -->
+    <script src="scripts/maps.js"></script>
+    <script src="scripts/navigation.js"></script>
+
+</body>
+
+</html>
