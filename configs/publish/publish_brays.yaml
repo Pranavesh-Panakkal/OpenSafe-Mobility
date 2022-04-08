@@ -1,0 +1,1 @@
+command_to_publish_the_map_to_aws: aws s3 sync ${website_dir} s3://opensafemobility.com/

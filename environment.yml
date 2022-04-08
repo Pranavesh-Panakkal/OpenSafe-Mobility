@@ -1,0 +1,31 @@
+name: opensafe_mobility
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - matplotlib
+  - hydra-core
+  - scikit-learn
+  - loky
+  - numba
+  - tqdm
+  - geopandas
+  - networkx
+  - rasterio
+  - rasterstats
+  - xarray
+  - rioxarray
+  - paramiko
+  - pywin32
+  - geotiff
+  - climata
+  - bokeh
+  - schedule
+  - pip
+  - pip:
+    - pydsstools-2.1-cp38-cp38-win_amd64.whl
+
+# Use
+# conda env create --file environment.yml

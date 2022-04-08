@@ -1,0 +1,18 @@
+fix_hec_ras_automation_error:
+  files_to_replace:
+    file_1:
+      # This file will be deleted
+      to: ${model_dir}\Model_02_Aug_2021\Brays_2D_Model_V2.u01
+      # Copy this file from here
+      from: ${data_dir}\inputs\HEC-RAS_files_to_replace\Brays_2D_Model_V2.u01
+
+ras_controller:
+  version_string: '60'
+  ras_file: ${model_dir}\Model_02_Aug_2021\Brays_2D_Model_V2.prj
+  results_folder: ${model_dir}\Model_02_Aug_2021\OpenSafe
+  path_to_dss_input: ${model_dir}\Model_02_Aug_2021\OpenSafe_Mobility.dss
+  results_tiff: ${model_dir}\Model_02_Aug_2021\OpenSafe\Depth (26SEP2020 08 00 00).Terrain_10ft.Resampled.tif
+  results_WSE_tiff: ${model_dir}\Model_02_Aug_2021\OpenSafe\WSE (26SEP2020 08 00 00).Terrain_10ft.Resampled.tif
+  results_tiff_projected: ${model_dir}\Model_02_Aug_2021\OpenSafe\Depth (26SEP2020 08 00 00).Terrain_10ft.Resampled_Projected.tif
+  results_tiff_WSE_projected: ${model_dir}\Model_02_Aug_2021\OpenSafe\WSE (26SEP2020 08 00 00).Terrain_10ft.Resampled_Projected.tif
+  flood_depth_map:  ${results_dir}\flood_depth_raster.png

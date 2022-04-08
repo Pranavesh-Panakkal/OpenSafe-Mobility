@@ -1,0 +1,22 @@
+input:
+  flood_analysis:
+    # Path to the digital surface model
+    dsm: ${data_dir}\inputs\analysis_data\matched_DSM_Brays_Clipped_in_feet.tif
+  network_analysis:
+    # Path to network
+    path_network: ${data_dir}/inputs/analysis_data/Road_network_Brays_Buffer_2miles_EPSG4326.geojson
+    # Wading height for identifying flooded roads. Units follow the units from the project crs
+    link_removal_threshold: 2
+  spatial_analysis:
+    # Path to the watershed
+    path_watershed: ${data_dir}/inputs/analysis_data/Brays_Watershed_EPSG4326.geojson
+    # Path to the census tract file
+    path_census_tract: ${data_dir}/inputs/analysis_data/CDC_SVI_Brays_EPSG4326.geojson
+    critical_facilities:
+      # Path to critical facilities
+      Hospitals: ${data_dir}/inputs/analysis_data/Hospitals_Brays_Buffer_2miles_EPSG4326.geojson
+      Fire_stations: ${data_dir}/inputs/analysis_data/Fire_Stations_Brays_Buffer_2miles_EPSG4326.geojson
+      Dialysis_centers: ${data_dir}/inputs/analysis_data/Dialysis_Centers_Brays_Buffer_2miles_EPSG4326.geojson
+    # Crs used
+    crs: 'epsg:4326'
+    buffer_for_flood_depth_extraction: 0.00000001

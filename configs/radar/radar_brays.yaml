@@ -1,0 +1,59 @@
+# using this option you could also run the code at a time in the past
+# Time should be entered in this format '%Y-%m-%d  %I:%M%p' or '2022-03-31 1:00PM'
+hindcast_model:
+  active: False
+  time: '2022-03-28 1:00PM'
+
+server:
+  HOST_NAME: # Host name here
+  USER_NAME: # user name here
+  PASSWORD: #Please enter the password here
+
+radar_rainfall:
+  # Duration in hours; Keep this greater (say 24 hrs) than the total record length in hours.
+  # 5 days contain 120 hrs
+  duration_hr: 200
+  # Duration in minutes. added with the above analysis.
+  duration_min: 0
+  # Time step in minutes, this is the time step for which we have radar reading
+  time_resolution_of_the_incoming_data: 5
+  # Additional data to collect to create buffer
+  # This additional data will help if some data is missing, for example if current time step is not avaialble,
+  # we can take data from this step, i.e., move the time windows
+  additional_data_in_hrs: 24
+  # Row labels to remove in the data
+  # The data from Vieux contain these additional rows, this car summary data
+  rows_to_remove_from_record: ['brays_al',  'brays_em',  'brays_gm',  'brays_wg',  'brays_wm']
+  rows_to_keep_in_the_record: ['CITYA', 'D100A', 'D100B','D100C','D100D','D100E','D100F','D100G','D100H','D100I','D100J','D100K','D100L','D100M','D100N','D100O','D100P','D100Q','D100R','D103A','D105A','D109A','D111A','D112A','D112B','D113A','D115A','D118A','D118B','D118C','D118D','D118E','D120A','D120B','D122A','D122B','D124A','D126A', 'D129A','D129B','D133A','D139A','D140A','D140B','D140C','D142A']
+  # 5 minutes per step; it requires 3 step to get 15 minute rainfall. 15 minute are used in hec-ras dss input
+  col_per_time_step: 3
+  # Length of the record used in hec-ras DSS run
+  record_length: 576 # Total record length 1Day = 24 * 4 = 96
+  # How to handle missing variables options are
+  # 'neglect' act as if data gap does not exist
+  # 'fill_linear' fill the gap using linear intepolation
+  # 'fill_1" fill the gap with '1' or any X rainfall.
+  # 'stop' stop the analysis
+  # This does not apply to the latest time steps for which data is missing duration_hr|-------|*not applicable here*|Now
+  handle_missing_by: 'linear'
+  #  handle_missing_by: 'fill_1'
+  # Code used to encode missing value in the radar input data
+  missing_data_tag: -1
+  # Replace missing data encoded with the missing data tag with this
+  replace_missing_tag_with: 0
+
+dss_file:
+  path_dss_file: 'Template' # Folder in which DSS is stored
+  # name_dss_file: "OpenSafe_Mobility.dss" # Name of the DSS file; "Brays_2D_Model_V2.dss"
+  # Use absolute path here
+  name_dss_file: ${model_dir}\Model_02_Aug_2021\OpenSafe_Mobility.dss # Name of the DSS file; "Brays_2D_Model_V2.dss"
+  start_time: "20SEP2020 08:15:00"
+  path_name_dss: "//SUB_BASIN/PRECIP-INC/01SEP2020/15MIN//"
+  ID_to_replace: "SUB_BASIN"
+  units: "INCHES"
+  type: "PER-CUM"
+  interval: 1
+  # A shapefile showing the location of different IDs used in the rainfall
+  # This is used to generate the validation maps
+  geodata_for_rainfall: ${data_dir}/inputs/dss_related/brays_json_EPSG_3857.geojson
+  col_name_to_use_as_key: 'SUBBASIN'

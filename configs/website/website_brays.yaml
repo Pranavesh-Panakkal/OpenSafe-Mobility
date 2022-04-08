@@ -1,0 +1,42 @@
+# Legend for flood mapx
+map_legend:
+  0: [ -1e100, 1.0, 0, 0, 0 , 0]
+  5: [ 1.0, 1.5, 222, 235, 247 , 255] #DEEBF7
+  6: [ 1.5, 2.0, 158, 202, 225 , 255] #9ECAE1
+  7: [ 2.0, 4.0, 66, 146, 198 , 255] #4292C6
+  8: [ 4.0, 1e100, 8, 69, 148 , 255] #084594
+
+# Inputs for the validation map
+validation_dashboard:
+  rainfall_distribution_map:
+    time_intervals_in_minutes: { main: 180, tool_tips: [30, 60, 120, 180, 360, 720] }
+  rainfall_time_series_duration: [180, 1440]
+  figure_labels:
+    figure_1:
+      fig_width: 700
+      fig_height: 350
+      main_title: "Spatial distribution of the most recent 3-hour rainfall over the Brays Bayou watershed"
+      description: "Rainfall distribution over the study region. Regions without data are marked in grey."
+      sources: "Radar data from Vieux & Associates, Inc."
+      sources_ref: "#"
+    figure_2:
+      fig_width: 750
+      fig_height: 400
+      main_title: "Time-history of rainfall for different time windows"
+      description: "Average distribution of rainfall for select time windows."
+      sources: "Radar data from Vieux & Associates, Inc."
+      sources_ref: "#"
+    figure_3:
+      fig_width: 800
+      fig_height: 400
+      main_title: "Rainfall trigger threshold"
+      description: "OpenSafe Mobility will trigger model run once the maximum observed rainfall in any sub-region exceed the NOAA Atlas-14 5-year rainfall (red line)."
+      sources: "NOAA Atlas-14"
+      sources_ref: "https://hdsc.nws.noaa.gov/hdsc/pfds/pfds_map_cont.html"
+    figure_4:
+      fig_width: 400
+      fig_height: 400
+      main_title: "Real-time stream gage levels at select watchpoints on Brays Bayou"
+      description: "Gage level from two locations in the watershed."
+      sources: "USGS"
+      sources_ref: "https://waterdata.usgs.gov/monitoring-location/08075000/#parameterCode=00065&period=P7D"

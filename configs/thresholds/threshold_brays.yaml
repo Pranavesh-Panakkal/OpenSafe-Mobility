@@ -1,0 +1,14 @@
+run_model_even_if_no_flooding: True
+
+# Criteria for identifying flood inducing rainfall
+run_criteria:
+  criteria_1: {duration_min: 30, threshold: 2.08}
+  criteria_2: {duration_min: 60, threshold: 2.79}
+  criteria_3: {duration_min: 120, threshold: 3.58}
+  criteria_4: {duration_min: 180, threshold: 4.08}
+  criteria_5: {duration_min: 360, threshold: 4.98}
+  criteria_6: {duration_min: 720, threshold: 5.94}
+  criteria_7: {duration_min: 1440, threshold: 7.01}
+  criteria_8: {duration_min: 2880, threshold: 8.30}
+  criteria_9: {duration_min: 4320, threshold: 9.08}
+  criteria_10: {duration_min: 5760, threshold: 9.57}

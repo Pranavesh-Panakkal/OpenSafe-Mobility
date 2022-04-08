@@ -1,0 +1,3 @@
+folders_to_create:
+  # Folder to store the acquired radar data
+  path_to_store_radar: ${data_dir}\radar_data

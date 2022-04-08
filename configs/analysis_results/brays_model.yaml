@@ -1,0 +1,36 @@
+results_folder: ${model_dir}\Model_02_Aug_2021\OpenSafe
+
+final_results:
+  # Location of the final flood depth map
+  flood_depth_png: ${website_dir}\data\flood_depth_raster.png
+  # Location of road condition geojson
+  road_condition: ${website_dir}\data\flooded_roads.geojson
+  # Location of accessibility measures geojson polygons
+  accessibility_measures: ${website_dir}\data\mobility.geojson
+  # Validation dashboard html
+  validation_dashboard: ${website_dir}\pages\opensafe_mobility_validation_dashboard.html
+  # Last run
+  last_run_tag_website:  ${website_dir}\data\last_run.html
+
+temporary_files:
+  # Location of dss file per run
+  dss_file: ${model_dir}\Model_02_Aug_2021\OpenSafe_Mobility.dss'
+  # Location of inundation depth map per run
+  results_tiff: ${model_dir}\Model_02_Aug_2021\OpenSafe\Depth (26SEP2020 08 00 00).Terrain_10ft.Resampled.tif
+  # Location of WSE per run
+  results_WSE_tiff: ${model_dir}\Model_02_Aug_2021\OpenSafe\WSE (26SEP2020 08 00 00).Terrain_10ft.Resampled.tif
+  # water over roads
+  results_tiff_water_over_roads: ${model_dir}\Model_02_Aug_2021\OpenSafe\water_depth_over_roads.tif
+  # water over roads projected
+  results_tiff_water_over_roads_projected: ${model_dir}\Model_02_Aug_2021\OpenSafe\water_depth_over_roads_Projected.tif
+  # Location of projected depth map
+  results_tiff_projected: ${model_dir}\Model_02_Aug_2021\OpenSafe\Depth (26SEP2020 08 00 00).Terrain_10ft.Resampled_Projected.tif
+  # Location of projected wse map
+  results_tiff_WSE_projected: ${model_dir}\Model_02_Aug_2021\OpenSafe\WSE (26SEP2020 08 00 00).Terrain_10ft.Resampled_Projected.tif
+  # Crs of input and output data
+  input_crs: 'EPSG:2278' # CRS of input files
+  output_crs: 'EPSG:4326' # For mapping
+  # Output from network analysis model
+#  temp_network_condition: ${data_dir}\results\Network_Condition_results.json
+  # Temporary storage for saving results during geoprocessing
+  temp_storage_for_analysis: ${data_dir}\results

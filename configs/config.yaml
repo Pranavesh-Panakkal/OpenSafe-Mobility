@@ -1,0 +1,24 @@
+# path to the original working directory
+original_work_dir: ${hydra:runtime.cwd}
+
+# path to some important folder
+data_dir: ${original_work_dir}/data/
+model_dir: ${original_work_dir}/model/
+website_dir: ${original_work_dir}/website/
+results_dir: ${original_work_dir}/results/
+
+# Time interval between runs in minutes
+time_step: 5
+
+# specify here the default configuration
+defaults:
+  - _self_
+  - storage: storage_folders.yaml
+  - analysis_results: brays_model.yaml
+  - hec_ras: hec_ras_brays.yaml
+  - radar: radar_brays.yaml
+  - thresholds: threshold_brays.yaml
+  - spatial_network_data: spatial_network_data_brays.yaml
+  - website: website_brays.yaml
+  - publish: publish_brays.yaml
+
