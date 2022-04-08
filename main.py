@@ -1,6 +1,6 @@
 # Title     : OpenSafe Mobility
 # Objective : This repository contains all the necessary code to replicate OpenSafe Mobility workflow.
-# Created by: Pranavesh Panakkal (pranavesh@rice.edu)
+# Created by: Pranavesh Panakkal (pranavesh@rice.edu) and Jamie Ellen Padgett (jamie.padgett@rice.edu)
 # Released on: 2022-04-07
 # Version   : 1.0
 """"""
