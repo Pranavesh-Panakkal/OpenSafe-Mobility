@@ -1,7 +1,7 @@
 <div align="center">
 
 # OpenSafe Mobility
-**Open**source **S**ituational **A**wareness **F**ram**e**work for **Mobility**
+**Open** source **S**ituational **A**wareness **F**ram**e**work for **Mobility**
 
 <a href="https://hydra.cc/"><img alt="Config: Hydra" src="https://img.shields.io/badge/Config-Hydra-89b8cd"></a>
 [![Paper](https://img.shields.io/badge/paper-under%20review-blue)]()
