@@ -33,7 +33,7 @@ Steps to follow:
 1. Web domain - ~12/year ([Google Domains](https://domains.google)). Cheaper options are also available.
 2. Web hosting - [Amazon AWS](https://aws.amazon.com/s3/pricing/?p=ft&c=wa&z=2). $0.0004/1000 requests.
 3. Map framework - 
-   1. [Mapbox](https://www.mapbox.com/pricing): Free (50k monthly loads); $250 (100k monthly loads); $1610 (500k monthly loads)
+   1. [Mapbox](https://www.mapbox.com/pricing): Free (50k monthly loads); $250 (100k monthly loads); $1610 (500k monthly loads).
    2. [Leaflet](https://leafletjs.com/): Free and Open Source.
 4. Radar data: Free (NEXARD) or gage-adjusted radar data (depends on the provider).
 5. Flood model development: Regional flood models might be open source and free (e.g., [M3 System from Harris County Flood Control District](https://www.hcfcd.org/Resources/Interactive-Mapping-Tools/Model-and-Map-Management-M3-System)). Cost for custom flood models depends on several factors. 
