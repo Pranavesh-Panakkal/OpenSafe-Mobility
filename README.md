@@ -74,4 +74,4 @@ TBD
 
 ## Contact
 
-Please contact Pranavesh Panakkal [pranavesh at rice.edu] or Dr. Jamie Ellen Padgett for any questions.
+Please contact Pranavesh Panakkal [pranavesh at rice.edu] or Dr. Jamie Ellen Padgett for more information.
