@@ -4,7 +4,7 @@
 **Open** source **S**ituational **A**wareness **F**ram**e**work for **Mobility**
 
 <a href="https://hydra.cc/"><img alt="Config: Hydra" src="https://img.shields.io/badge/Config-Hydra-89b8cd"></a>
-[![Paper](https://img.shields.io/badge/Published%20review-blue)](https://www.sciencedirect.com/science/article/pii/S0022169423010429)
+[![Paper](https://img.shields.io/badge/Paper%20Published-blue)](https://www.sciencedirect.com/science/article/pii/S0022169423010429)
 [![Keywords](https://img.shields.io/badge/keywords-urban%20flooding%2C%20mobility%2C%20situational%20awareness-blue)]()
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 </div>
